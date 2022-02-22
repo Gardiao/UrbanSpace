@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@900&display=swap');
+
+:root {
+    --backColor: cadetblue;
+    --backColorDarker: rgb(70, 113, 116);
+    --primaryFont: rgb(213, 224, 224);
+}
+
+* { 
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* ---Header/navbar--- */
+
+header {
+    background-color: var(--backColor);
+    width: 100vw;
+    height: 105px;
+    display: grid;
+    grid-template-columns: 35% 45%;
+}
+
+.header-logo {
+    font-family: Roboto;
+    font-size: 25px;
+    color: var(--primaryFont);
+    margin: auto;
+}
+
+.navbar {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    margin-right: 4vw;
+}
+
+.navbar li {
+    float: left;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    position: relative;
+    font-family: Roboto;
+    font-size: 18px;
+    color: var(--primaryFont);
+    padding: 5px;
+}
+
+.navbar a:hover {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    background-color: var(--primaryFont);
+    width: 0;
+    height: 3px;
+    left: 0;
+    top: 100%;
+    transition: 0.4s;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+@media (max-width: 500px) {
+    header {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .header-logo {
+        font-size: 20px;
+    }
+
+    .navbar {
+        margin-right: 0;
+    }
+
+    .navbar a {
+        font-size: 15px;
+    }
+
+    .navbar a:hover {
+        font-size: 17px;
+        cursor: pointer;
+    }
+}
+
+/* ------ */
+
+/* --First Section -- */
+
+.first-section {
+    background-image: url('./Imgs/Img1.jpg');
+    width: 100vw;
+    height: 30vh;
+}
+
+.first-section h2 {
+    padding-top: 10vh;
+    font-family: Roboto;
+    font-size: 28px;
+    color: var(--primaryFont);
+    text-align: center;
+
+}
+
+/* ------ */
+
+/* --First Cards --*/
+
+.first-cards {
+    margin:  5vh 15vw auto;
+    width: 72vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5vw;
+}
+
+.card {
+    text-align: center;
+    padding: 6px;
+    border-right: 2px Solid var(--backColor);
+    border-bottom: 2px Solid var(--backColor);
+    border-top: 0 Solid var(--backColor);
+    border-left: 0 Solid var(--backColor);
+    transition: 0.1s;
+}
+
+.card-image {
+    padding: 4px;
+    width: 230px;
+    height: 230px;
+}
+
+.card-name {
+    font-family: Roboto;
+    font-size: 22px;
+    color: var(--backColorDarker);
+}
+
+.card-text {
+    font-family: Poppins;
+    font-size: 15px;
+    color: var(--backColor);
+}
+
+.card:hover {
+    cursor: pointer;
+    border-top: 2px Solid var(--backColor);
+    border-left: 2px Solid var(--backColor);
+}
+
+
+@media (max-width: 1010px) {
+    .first-cards {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 5vh;
+        margin: 2vh auto;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .first-cards {
+        grid-template-columns: 1fr;
+        row-gap: 5vh;
+        margin: 2vh auto;
+    }
+
+    .first-section h2 {
+        font-size: 23px;
+    }
+    
+}
+
+/* ------ */
+
+/* --Second section -- */
+
+.second-section {
+    width: 100vw;
+    height: 50vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 15vh;
+}
+
+.secImg{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.secImg a {
+    position: absolute;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 18px;
+    color: var(--primaryFont);
+    margin: 30% 30% auto;
+    z-index: 2;
+}
+
+.secImg img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.secImg:hover{
+    filter: brightness(120%);
+    cursor: pointer;
+}
+
+/* ------ */
+
+/* --Last Txt-- */
+
+.effect-text {
+    width: 50vw;
+    height: 15vh;
+    opacity: 0;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--backColorDarker);
+    margin: 15vh auto;
+    animation: anime 1.5s ease-out forwards;
+}
+
+@keyframes anime {
+    0%{
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 0.5;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+@media (max-width: 535px) {
+
+    .effect-text {
+        font-size: 16px;
+        height: 100%;
+    }
+}
+
+/* ------ */
+
+/* ---- Footer -----*/
+
+footer {
+    background-color: var(--backColor);
+    width: 100vw;
+    height: 105px;
+    display: grid;
+    grid-template-columns: 35% 45%;
+}
+
+footer h3 {
+    font-family: Roboto;
+    font-size: 25px;
+    color: var(--primaryFont);
+    margin: auto;
+}
+
+footer ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    margin-right: 4vw;
+}
+
+footer li {
+    float: left;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+}
+
+footer i {
+    font-size: 18px;
+    color: var(--primaryFont);
+}
